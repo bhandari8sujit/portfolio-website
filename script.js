@@ -49,25 +49,7 @@ revealEls.forEach((el) => observer.observe(el));
 // Theme toggle with persistence
 const themeToggle = document.getElementById('themeToggle');
 const root = document.documentElement;
-
-const savedTheme = localStorage.getItem('theme');
-if (savedTheme === 'light') {
-  root.setAttribute('data-theme', 'light');
-  themeToggle.textContent = '☀️';
-}
-
-themeToggle.addEventListener('click', () => {
-  const isLight = root.getAttribute('data-theme') === 'light';
-  if (isLight) {
-    root.removeAttribute('data-theme');
-    themeToggle.textContent = '🌙';
-    localStorage.setItem('theme', 'dark');
-  } else {
-    root.setAttribute('data-theme', 'light');
-    themeToggle.textContent = '☀️';
-    localStorage.setItem('theme', 'light');
-  }
-});
+root.setAttribute('data-theme', 'light');
 
 // Footer year (if needed elsewhere)
 document.querySelectorAll('[data-year]').forEach((el) => {
